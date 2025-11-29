@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary"> <!-- Bootstrap navbar: dark blue, responsive -->
+    <div class="container"> <!-- Container for centered content -->
+        <a class="navbar-brand" [routerLink]="'/'">Home</a> <!-- HTML routing: declarative, brand link -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span> <!-- Responsive toggle -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto"> <!-- Centered nav items -->
+                <li class="nav-item"><a class="nav-link" [routerLink]="'/login'">Login</a></li>
+                <!-- HTML routing: clean link -->
+                <li class="nav-item"><a class="nav-link" [routerLink]="'/contact'">Contact</a></li>
+                <!-- HTML routing: clean link -->
+            </ul>
+        </div>
+    </div>
+</nav>

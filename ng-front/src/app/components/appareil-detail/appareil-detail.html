@@ -1,0 +1,8 @@
+<div class="card" *ngIf="appareil">
+    <div class="card-body">
+        <h3>{{ appareil.name }}</h3>
+        <p>Status: <strong>{{ appareil.status }}</strong></p>
+        <!-- Route params: Display retrieved ID -->
+        <p>ID from URL: {{ id }}</p>
+    </div>
+</div>

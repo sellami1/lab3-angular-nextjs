@@ -1,0 +1,9 @@
+<div class="card m-2"
+    [ngClass]="{'bg-success': appareil.status === 'Allumé', 'bg-danger': appareil.status === 'Eteint'}">
+    <div class="card-body">
+        <h5>{{ appareil.name }}</h5>
+        <p>Status: {{ appareil.status }}</p>
+        <!-- Parent → Child data sharing: Display passed string -->
+        <small>Received message: {{ messageFromParent }}</small>
+    </div>
+</div>

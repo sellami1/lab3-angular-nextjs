@@ -1,0 +1,8 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';  /* Bootstrap import */
+
+/* Global styles from doc */
+.headerCss {  /* CSS for header menu */
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}

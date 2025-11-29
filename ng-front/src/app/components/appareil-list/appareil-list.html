@@ -1,0 +1,6 @@
+<!-- Parent → Child: Pass data to child (appareil object + message string) -->
+<app-appareil-item *ngFor="let app of appareils" [appareil]="app" [messageFromParent]="'Hello from list parent!'">
+</app-appareil-item>
+
+<!-- Routing from HTML with route params: Pass dynamic ID in link (declarative, simple) -->
+<!-- <a [routerLink]="['/appareil', app._id]">View Detail</a> Assuming app has _id from MongoDB -->
