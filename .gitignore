@@ -1,0 +1,91 @@
+# -----FOR ANGULAR PROJECT -----
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+ng-front/
+# Compiled output
+ng-front//dist
+ng-front//tmp
+ng-front//out-tsc
+ng-front//bazel-out
+ng-front/
+# Node
+ng-front//node_modules
+ng-front/npm-debug.log
+ng-front/yarn-error.log
+ng-front/
+# IDEs and editors
+ng-front/.idea/
+ng-front/.project
+ng-front/.classpath
+ng-front/.c9/
+ng-front/*.launch
+ng-front/.settings/
+ng-front/*.sublime-workspace
+ng-front/
+# Visual Studio Code
+ng-front/.vscode/*
+ng-front/!.vscode/settings.json
+ng-front/!.vscode/tasks.json
+ng-front/!.vscode/launch.json
+ng-front/!.vscode/extensions.json
+ng-front/.history/*
+ng-front/
+# Miscellaneous
+ng-front//.angular/cache
+ng-front/.sass-cache/
+ng-front//connect.lock
+ng-front//coverage
+ng-front//libpeerconnection.log
+ng-front/testem.log
+ng-front//typings
+ng-front/__screenshots__/
+ng-front/
+# System files
+ng-front/.DS_Store
+ng-front/Thumbs.db
+
+
+# ----- FOR NEXTJS PROJECT -----
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+nxjs-front/
+# dependencies
+nxjs-front//node_modules
+nxjs-front//.pnp
+nxjs-front/.pnp.*
+nxjs-front/.yarn/*
+nxjs-front/!.yarn/patches
+nxjs-front/!.yarn/plugins
+nxjs-front/!.yarn/releases
+nxjs-front/!.yarn/versions
+nxjs-front/
+# testing
+nxjs-front//coverage
+nxjs-front/
+# next.js
+nxjs-front//.next/
+nxjs-front//out/
+nxjs-front/
+# production
+nxjs-front//build
+nxjs-front/
+# misc
+nxjs-front/.DS_Store
+nxjs-front/*.pem
+nxjs-front/
+# debug
+nxjs-front/npm-debug.log*
+nxjs-front/yarn-debug.log*
+nxjs-front/yarn-error.log*
+nxjs-front/.pnpm-debug.log*
+nxjs-front/
+# env files (can opt-in for committing if needed)
+nxjs-front/.env*
+nxjs-front/
+# vercel
+nxjs-front/.vercel
+nxjs-front/
+# typescript
+nxjs-front/*.tsbuildinfo
+nxjs-front/next-env.d.ts
+
+# ----- OTHER -----
+.vscode
