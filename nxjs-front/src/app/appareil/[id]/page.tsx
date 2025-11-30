@@ -15,7 +15,7 @@ export default function AppareilDetail() {
   // API calls: Fetch by ID on mount
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3001/api/appareils/${id}`)  /* API call: GET one by id */
+      fetch(`http://192.168.50.100:3001/api/appareils/${id}`)  /* API call: GET one by id */
         .then(res => res.json())
         .then(data => setAppareil(data))
         .catch(err => console.error(err));
@@ -23,12 +23,20 @@ export default function AppareilDetail() {
   }, [id]);  /* Re-run on id change */
 
   return (    
-    <>      
-      <div>Appareil Detail Page</div>      
-      {/* Route params: Display id */}
-      <h2>ID: {id}</h2>  
-      {/* API data: Show name/status */}
-      {appareil ? <p>{(appareil as any).name} - {(appareil as any).status}</p> : <p>Loading...</p>}
-    </>  
+    <div className="container mt-5">  {/* Bootstrap: Container */}
+      <div className="card mx-auto" style={{ maxWidth: '400px' }}>  {/* Bootstrap: Centered card */}
+        <div className="card-body">
+          <h5 className="card-title">Appareil Detail Page</h5>  {/* Bootstrap: Title */}
+          {/* Route params: Display id */}
+          <p className="card-text">ID: {id}</p>  
+          {/* API data: Show name/status */}
+          {appareil ? (
+            <p className="card-text">{(appareil as any).name} - {(appareil as any).status ? 'Turned-On' : 'Turned-Off'}</p>
+          ) : (
+            <p className="card-text">Loading...</p>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }

@@ -1,0 +1,56 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: lab3-mongo-container
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - lab3-net
+    restart: unless-stopped
+
+  backend:
+    image: generic-test-backend-image:latest   # <-- already built backend image from lab2
+    container_name: lab3-backend-container
+    environment:
+      MONGO_URI: mongodb://mongo:27017/test-devices # <-- MongoDB for lab3 is named test-devices (cause it manages devices)
+      PORT: 3001
+    depends_on:
+      - mongo
+    networks:
+      - lab3-net
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+
+  nextjs:
+    build:
+      context: ./nxjs-front
+      dockerfile: Dockerfile
+    container_name: lab3-frontend-nxjs-container
+    depends_on:
+      - backend
+    networks:
+      - lab3-net
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+  angular:
+    build:
+      context: ./ng-front
+      dockerfile: Dockerfile
+    container_name: lab3-frontend-ng-container
+    depends_on:
+      - backend
+    networks:
+      - lab3-net
+    ports:
+      - "4200:80"   # host:container -> host port 4200 maps to nginx:80 in angular container
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
+
+networks:
+  lab3-net:
+    driver: bridge

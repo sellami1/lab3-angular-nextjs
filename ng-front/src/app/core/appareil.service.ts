@@ -8,7 +8,7 @@ import { Appareil } from './models/appareil.model';
 })
 export class AppareilService {
 
-  private apiUrl = 'http://localhost:3001/api/appareils';  // Backend API base URL (from Express + MongoDB)
+  private apiUrl = 'http://192.168.50.100/api/appareils';  // Backend API base URL (from Express + MongoDB)
 
   constructor(private http: HttpClient) { }
 

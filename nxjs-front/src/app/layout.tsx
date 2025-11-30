@@ -2,7 +2,7 @@ import type { Metadata } from "next";  // For metadata (optional but good practi
 import "./global.css";  // Import global CSS (as per your project)
 
 export const metadata: Metadata = {
-  title: "Device App",  // Basic metadata
+  title: "Lab3: Angular & NextJS",  // Basic metadata
   description: "Full-stack device management",
 };
 
