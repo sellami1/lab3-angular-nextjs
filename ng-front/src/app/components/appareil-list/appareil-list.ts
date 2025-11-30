@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Appareil } from '../../core/models/appareil.model';
+import { AppareilService } from '../../core/appareil.service';
 
 @Component({
   selector: 'app-appareil-list',
@@ -7,20 +9,19 @@ import { Component } from '@angular/core';
   styleUrl: './appareil-list.css',
 })
 export class AppareilList {
+	
+  appareils: any[] = [];
 
-  appareils: any[] = [
-    {
-      name: "App1",
-      status: "Status1",
-    },
-    {
-      name: "App2",
-      status: "Status2",
-    },
-    {
-      name: "App3",
-      status: "Status3",
-    }
-  ];  // Would load via API in real use
+  constructor(
+    private service: AppareilService  // Injected for API calls
+  ) {}
+
+  ngOnInit() {
+    // API call: Fetch all devices on init (subscribe to Observable)
+    this.service.getAll().subscribe((devices) => {
+		this.appareils = devices;
+		console.log("From list: " + this.appareils);
+	});  // Example usage – load devices
+  }
 
 }
